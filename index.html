@@ -88,6 +88,7 @@
     <button id="noBtn" onmouseover="runAway()" ontouchstart="runAway(event)" onclick="runAway()">لا 😅</button>
   </div>
   <div id="message"></div>
+  <audio id="loveSong" src="EGA012500287.mp3" preload="auto"></audio>
 <script>
   const noBtn = document.getElementById('noBtn');
   const messages = [
@@ -114,6 +115,9 @@
   }
   function sayYes() {
     document.getElementById('message').innerText = "🥰 كنت متأكد إنك هتقولي اه بحبكككك يامزززتيييي";
+    const song = document.getElementById('loveSong');
+    song.currentTime = 0;
+    song.play().catch(() => {});
     for (let i = 0; i < 20; i++) {
       createHeart();
     }
